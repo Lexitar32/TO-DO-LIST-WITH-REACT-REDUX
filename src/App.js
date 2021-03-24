@@ -1,10 +1,11 @@
 import React from "react";
-import BookList from "./components/BookList";
+import "bootstrap/dist/css/bootstrap.css";
+import MainTasksContent from "./components/MainTasksContent";
 
 function App() {
   return (
-    <div>
-      <BookList />
+    <div className="m-3">
+      <MainTasksContent />
     </div>
   );
 }

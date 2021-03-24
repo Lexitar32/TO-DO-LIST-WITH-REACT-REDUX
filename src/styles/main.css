@@ -1,0 +1,28 @@
+.main-content {
+  margin: auto;
+  max-width: 60%;
+}
+
+.add-task {
+  padding: 8px;
+  margin-right: 5px;
+}
+
+.btn-add {
+  padding: 10px;
+  margin-top: -3px;
+}
+
+.task-list {
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f4f4f4;
+}
+
+.task-item {
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr 0.5fr;
+  grid-gap: 7px;
+}
