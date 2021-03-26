@@ -1,11 +1,20 @@
+body {
+  background-color: #ccc;
+}
+
 .main-content {
   margin: auto;
   max-width: 60%;
 }
 
 .add-task {
-  padding: 8px;
+  padding: 11px;
   margin-right: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-task:focus {
+  outline: 0;
 }
 
 .btn-add {
@@ -18,6 +27,21 @@
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f4f4f4;
+}
+
+.filter {
+  padding: 6px;
+  border: 1px solid #ccc;
+  margin-right: 50px;
+}
+
+.filter:focus {
+  outline: 0;
+  border: 1px solid #ccc;
+}
+
+.no {
+  font-weight: bold;
 }
 
 .task-item {
