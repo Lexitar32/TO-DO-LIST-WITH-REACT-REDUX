@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../actions/allActions";
-import { v1 as uuid } from "uuid";
+import { v1 as uuid } from "uuid"; // Random ID generator
 
 const AddTask = () => {
   const [taskName, settaskName] = useState();
@@ -11,7 +11,6 @@ const AddTask = () => {
   return (
     <div>
       <input
-        value={taskName}
         onChange={(e) => settaskName(e.target.value)}
         type="text"
         className="mt-3 add-task"

@@ -12,7 +12,6 @@ const TaskListItem = ({ filterDisplay }) => {
           {filterDisplay.id.length > 1 ? filterDisplay.id[0] : filterDisplay.id}
         </span>
         <h5>{filterDisplay.taskName}</h5>
-        <button className="btn btn-primary">Edit</button>
         <button
           className="btn btn-danger"
           onClick={() => dispatch(deleteTask(filterDisplay.id))}

@@ -1,5 +1,7 @@
-import { tasks } from "../states";
-import { ADD_TASK, EDIT_TASK, DELETE_TASK } from "../actions/type";
+// import { tasks } from "../states";
+import { ADD_TASK, DELETE_TASK } from "../actions/type";
+
+const tasks = [];
 
 export let reducer = (state = tasks, action) => {
   switch (action.type) {
@@ -7,8 +9,6 @@ export let reducer = (state = tasks, action) => {
       let newAddTask = [...state];
       newAddTask.push(action.payload);
       return newAddTask;
-    case EDIT_TASK:
-      break;
     case DELETE_TASK:
       let newTasks = [...state];
       newTasks = newTasks.filter((newTask) => newTask.id !== action.payload);

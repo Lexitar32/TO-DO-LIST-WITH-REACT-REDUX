@@ -3,7 +3,7 @@ import TaskListItem from "./TaskListItem";
 import { useSelector } from "react-redux";
 
 const TaskList = () => {
-  const tasks = useSelector((tasks) => tasks);
+  const tasks = useSelector((tasks) => tasks); // State gotten from redux
   const [filterTasks, setfilterTasks] = useState("");
   const [filterResult, setfilterResult] = useState([]);
 
