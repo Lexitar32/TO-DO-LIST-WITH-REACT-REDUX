@@ -21,7 +21,7 @@ const TaskList = () => {
     return decoded;
   };
 
-  const printedUserDetails = getUserDetails(localStorage.getItem("token"));
+  const userDetails = getUserDetails(localStorage.getItem("token"));
 
   return (
     <div className="task-list">
@@ -39,7 +39,7 @@ const TaskList = () => {
         <span className="no">Number of Tasks: {tasks.length} </span>
       </div>
       <div>
-        <h2>Name of User: {printedUserDetails.username}</h2>
+        <h2>Name of User: {userDetails.username}</h2>
       </div>
       {filterResult.map((task) => {
         return <TaskListItem key={task.id} filterDisplay={task} />;
