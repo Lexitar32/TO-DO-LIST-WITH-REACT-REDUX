@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteTask } from "../actions/allActions";
+import { deleteTask } from "../actions/Tasks/taskActions";
 
 const TaskListItem = ({ filterDisplay }) => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../actions/allActions";
+import { addTask } from "../actions/Tasks/taskActions";
 import { v1 as uuid } from "uuid"; // Random ID generator
 
 const AddTask = () => {

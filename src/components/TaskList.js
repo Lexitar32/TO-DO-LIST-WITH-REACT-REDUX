@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import TaskListItem from "./TaskListItem";
 import { useSelector } from "react-redux";
+import jwt_decode from "jwt-decode";
 
 const TaskList = () => {
-  const tasks = useSelector((tasks) => tasks); // State gotten from redux
+  const tasks = useSelector((tasks) => tasks.tasks); // State gotten from redux
   const [filterTasks, setfilterTasks] = useState("");
   const [filterResult, setfilterResult] = useState([]);
 
@@ -13,6 +14,14 @@ const TaskList = () => {
     );
     setfilterResult(myFilterResult);
   }, [tasks, filterTasks]);
+
+  // Fetch USER Details
+  const getUserDetails = (token) => {
+    var decoded = jwt_decode(token);
+    return decoded;
+  };
+
+  const printedUserDetails = getUserDetails(localStorage.getItem("token"));
 
   return (
     <div className="task-list">
@@ -28,6 +37,9 @@ const TaskList = () => {
           />
         </span>
         <span className="no">Number of Tasks: {tasks.length} </span>
+      </div>
+      <div>
+        <h2>Name of User: {printedUserDetails.username}</h2>
       </div>
       {filterResult.map((task) => {
         return <TaskListItem key={task.id} filterDisplay={task} />;
