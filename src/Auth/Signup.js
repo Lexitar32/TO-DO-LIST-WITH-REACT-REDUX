@@ -57,10 +57,29 @@ function Signup() {
             })}
             style={{ border: errors.username ? "1px solid red" : "" }}
             className="form-control"
-            aria-describedby="emailHelp"
+            type="username"
+            aria-describedby="usernameHelp"
           />
           {errors.username && (
             <p className="errorMessage">{errors.username.message}</p>
+          )}
+        </div>
+        <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Email Address
+          </label>
+          <input
+            {...register("email", {
+              required: "This field is required",
+              maxLength: { value: 50, message: "Exceeded the maximum words" },
+            })}
+            style={{ border: errors.email ? "1px solid red" : "" }}
+            className="form-control"
+            type="email"
+            aria-describedby="emailHelp"
+          />
+          {errors.email && (
+            <p className="errorMessage">{errors.email.message}</p>
           )}
         </div>
         <div className="mb-3">
