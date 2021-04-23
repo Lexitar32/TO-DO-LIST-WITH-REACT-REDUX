@@ -12,6 +12,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "jwt-decode": "^3.1.2",
+    "netlify-cli": "^3.21.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^7.1.0",

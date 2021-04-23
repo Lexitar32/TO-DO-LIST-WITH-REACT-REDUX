@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // React Hook Form Hooks
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../styles/signup.css";
 import { useDispatch } from "react-redux"; // For Dispatching Actions
-import { signupUser } from "../actions/Auth/signup.action";
+import { signupUser } from "../actions/Auth/auth.action";
 
 // Eye Icon for revealing password
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 function Signup() {
+  // Redirecting after Logging in
+  const history = useHistory();
   // Registering and Submitting Methods
   const {
     register,
     formState: { errors },
     handleSubmit,
-    reset,
   } = useForm();
 
   const [passwordShown, setPasswordShown] = useState(false); // State for password visibility
@@ -28,11 +29,11 @@ function Signup() {
 
   // Submit Function && resetting the input fields
   const onSubmit = (data) => {
-    reset();
-
-    dispatch(signupUser(data));
-
-    console.log(data);
+    dispatch(signupUser(data)).then(
+      setTimeout(() => {
+        history.push("/login");
+      }, 3500)
+    );
   };
 
   return (
@@ -52,7 +53,7 @@ function Signup() {
           <input
             {...register("username", {
               required: "This field is required",
-              maxLength: { value: 10, message: "Exceeded the maximum words" },
+              maxLength: { value: 50, message: "Exceeded the maximum words" },
             })}
             style={{ border: errors.username ? "1px solid red" : "" }}
             className="form-control"
@@ -70,8 +71,8 @@ function Signup() {
             {...register("password", {
               required: "This field is required",
               minLength: {
-                value: 8,
-                message: "Password must not be less than 8 characters",
+                value: 5,
+                message: "Password must not be less than 5 characters",
               },
             })}
             style={{ border: errors.password ? "1px solid red" : "" }}

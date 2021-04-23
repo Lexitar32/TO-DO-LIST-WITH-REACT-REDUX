@@ -22,6 +22,17 @@ body {
   margin-top: -3px;
 }
 
+.userData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name-data {
+  font-weight: bold;
+  font-size: 18px;
+}
+
 .task-list {
   margin: 40px auto;
   padding: 20px;

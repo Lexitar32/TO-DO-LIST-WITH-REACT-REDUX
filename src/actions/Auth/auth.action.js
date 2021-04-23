@@ -1,9 +1,9 @@
 import axios from "axios"; // Importing Axios
 import swal from "sweetalert"; // Using Sweetalert for successful actions
-import { SIGNIN_USER, SIGNUP_USER } from "../allTypes"; // Getting the action type
+import { LOGOUT_USER, SIGNIN_USER, SIGNUP_USER } from "../allTypes"; // Getting the action type
 
 export const signupUser = (userData) => (dispatch) => {
-  axios
+  return axios
     .post("https://todo-list-ekesolonge.herokuapp.com/api/users", userData)
     .then((response) => {
       if (response.status === 200) {
@@ -18,21 +18,12 @@ export const signupUser = (userData) => (dispatch) => {
           type: SIGNUP_USER,
           payload: response.data,
         });
-      } else {
-        swal({
-          title: "Error!",
-          text: "Oops, there was an error",
-          icon: "warning",
-          button: "Ok",
-        });
       }
-
-      window.location = "/login";
     });
 };
 
 export const signinUser = (userData) => (dispatch) => {
-  axios
+  return axios
     .post(
       "https://todo-list-ekesolonge.herokuapp.com/api/users/login",
       userData
@@ -60,7 +51,13 @@ export const signinUser = (userData) => (dispatch) => {
       }
 
       localStorage.setItem("token", response.data);
-
-      window.location = "/mainTasks";
     });
+};
+
+export const logoutUser = () => (dispatch) => {
+  localStorage.removeItem("token");
+
+  dispatch({
+    type: LOGOUT_USER,
+  });
 };
