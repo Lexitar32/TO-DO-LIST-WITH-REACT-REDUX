@@ -29,17 +29,16 @@ function Signup() {
 
   // Submit Function && resetting the input fields
   const onSubmit = (data) => {
-    dispatch(signupUser(data)).then(
-      setTimeout(() => {
-        history.push("/login");
-      }, 3500)
-    );
+    dispatch(signupUser(data))
+      // .then(
+      //   console.log(response)
+      // );
   };
 
   return (
     <React.Fragment>
       <h2 className="text-center page-header mt-5">
-        Welcome to My Task Manager
+        Welcome to My Task Manager App
       </h2>
       <form
         className="container mt-5 form-container"
@@ -53,7 +52,7 @@ function Signup() {
           <input
             {...register("username", {
               required: "This field is required",
-              maxLength: { value: 50, message: "Exceeded the maximum words" },
+              minLength: { value: 5, message: "Username must not be less than 5 characters" },
             })}
             style={{ border: errors.username ? "1px solid red" : "" }}
             className="form-control"

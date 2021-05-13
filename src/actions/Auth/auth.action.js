@@ -1,25 +1,31 @@
 import axios from "axios"; // Importing Axios
 import swal from "sweetalert"; // Using Sweetalert for successful actions
-import { LOGOUT_USER, SIGNIN_USER, SIGNUP_USER } from "../allTypes"; // Getting the action type
+import { LOGOUT_USER, SIGNIN_USER, SIGNUP_USER, THROW_ERROR } from "../allTypes"; // Getting the action type
 
 export const signupUser = (userData) => (dispatch) => {
-  return axios
-    .post("https://todo-list-ekesolonge.herokuapp.com/api/users", userData)
-    .then((response) => {
-      if (response.status === 200) {
-        swal({
-          title: "Congratulations!",
-          text: "You have Registered Successfully",
-          icon: "success",
-          button: "Proceed",
-        });
+  try {
+    return axios
+      .post("https://todo-list-ekesolonge.herokuapp.com/api/users", userData)
+      .then((response) => {
+        if (response.status === 200) {
+          swal({
+            title: "Congratulations!",
+            text: "You are successfully logged in!",
+            icon: "success",
+            button: "Proceed",
+          });
 
-        dispatch({
-          type: SIGNUP_USER,
-          payload: response.data,
-        });
-      }
-    });
+          dispatch({
+            type: SIGNUP_USER,
+            payload: response.data,
+          })
+
+          window.location = "/login";
+        }
+      })
+  } catch (error) {
+    console.log(error)
+  }
 };
 
 export const signinUser = (userData) => (dispatch) => {

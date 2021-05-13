@@ -43,9 +43,10 @@ label {
 
 i {
   position: absolute;
-  top: 50.5%;
+  top: 63%;
   right: 30%;
 }
+
 i:hover {
   color: #00fcb6;
   cursor: pointer;

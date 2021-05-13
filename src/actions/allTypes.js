@@ -7,5 +7,5 @@ export const LOGOUT_USER = "LOGOUT_USER";
 export const ADD_TASK = "ADD_TASK";
 export const DELETE_TASK = "DELETE_TASK";
 
-// Test Actions
-export const FETCH_USERS = "FETCH_USERS";
+// Error Action Type
+export const THROW_ERROR = "THROW_ERROR"
