@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // React Hook Form Hooks
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../styles/signup.css";
@@ -11,8 +11,6 @@ import { signupUser } from "../actions/Auth/auth.action";
 const eye = <FontAwesomeIcon icon={faEye} />;
 
 function Signup() {
-  // Redirecting after Logging in
-  const history = useHistory();
   // Registering and Submitting Methods
   const {
     register,
