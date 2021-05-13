@@ -8,4 +8,4 @@ export const ADD_TASK = "ADD_TASK";
 export const DELETE_TASK = "DELETE_TASK";
 
 // Error Action Type
-export const THROW_ERROR = "THROW_ERROR"
+export const THROW_ERROR = "THROW_ERROR";

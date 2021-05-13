@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../styles/signup.css";
-import { useDispatch } from "react-redux"; // For Dispatching Actions
+import { useDispatch, useSelector } from "react-redux"; // For Dispatching Actions
 import { signupUser } from "../actions/Auth/auth.action";
 
 // Eye Icon for revealing password
@@ -20,7 +20,9 @@ function Signup() {
     handleSubmit,
   } = useForm();
 
+  const error = useSelector(error => error.registerUsers.error)
   const [passwordShown, setPasswordShown] = useState(false); // State for password visibility
+  const [myError, setmyError] = useState(false);
   const dispatch = useDispatch();
 
   const togglePasswordVisiblity = () => {
@@ -29,10 +31,11 @@ function Signup() {
 
   // Submit Function && resetting the input fields
   const onSubmit = (data) => {
-    dispatch(signupUser(data))
-      // .then(
-      //   console.log(response)
-      // );
+    dispatch(signupUser(data));
+
+    if (error) {
+      setmyError(error.data)
+    }
   };
 
   return (
@@ -45,6 +48,7 @@ function Signup() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className="text-center sign-up">Sign Up</h2>
+        {myError ? <p className="errormessage">{myError}</p> : ""}
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Username

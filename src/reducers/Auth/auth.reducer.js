@@ -1,9 +1,10 @@
-import { LOGOUT_USER, SIGNIN_USER, SIGNUP_USER } from "../../actions/allTypes";
+import { LOGOUT_USER, SIGNIN_USER, SIGNUP_USER, THROW_ERROR } from "../../actions/allTypes";
 
 // Initial State
 const registerUser = {
   users: [],
   loggedUser: [],
+  error: null
 };
 
 const signupReducer = (state = registerUser, action) => {
@@ -20,6 +21,11 @@ const signupReducer = (state = registerUser, action) => {
         ...state,
         loggedUser: [...state.loggedUser, payload],
       };
+    case THROW_ERROR:
+      return {
+        ...state,
+        error: payload
+      }
     case LOGOUT_USER:
       return {
         ...state,
