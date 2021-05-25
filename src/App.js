@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Landing from "../src/components/LandingPage";
 import MainTasksContent from "./components/MainTasksContent";
 import Signup from "./Auth/Signup";
-import Login from "./Auth/Login";
+import Login from "./Auth/Login"
 
 function App() {
   return (
