@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background: url(../laptop.jpg) no-repeat center center/cover;
+  width: 100%;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .landingHeader {
   margin-top: 220px;
 }
