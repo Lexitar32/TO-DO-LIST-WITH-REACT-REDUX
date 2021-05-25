@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../actions/Tasks/taskActions";
 import { v1 as uuid } from "uuid"; // Random ID generator
+import "../styles/main.css";
 
 const AddTask = () => {
   const [taskName, settaskName] = useState();
@@ -9,7 +10,7 @@ const AddTask = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="addTaskFlex">
       <input
         onChange={(e) => settaskName(e.target.value)}
         type="text"

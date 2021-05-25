@@ -49,7 +49,7 @@ const TaskList = () => {
         </div>
       </div>
       <h4 className="py-3">Tasks</h4>
-      <div>
+      <div className="filterFlex">
         <span>
           <input
             type="text"
