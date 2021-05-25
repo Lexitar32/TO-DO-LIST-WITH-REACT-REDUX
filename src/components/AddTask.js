@@ -15,6 +15,7 @@ const AddTask = () => {
         type="text"
         className="mt-3 add-task"
         placeholder="Add a new task"
+        style={{ width: "50%" }}
       />
       <button
         className="btn btn-primary btn-add"

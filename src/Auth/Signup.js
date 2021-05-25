@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // React Hook Form Hooks
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faEye } from "@fortawesome/free-solid-svg-icons";
 import "../styles/signup.css";
 import { useDispatch, useSelector } from "react-redux"; // For Dispatching Actions
 import { signupUser } from "../actions/Auth/auth.action";
 
 // Eye Icon for revealing password
-const eye = <FontAwesomeIcon icon={faEye} />;
+// const eye = <FontAwesomeIcon icon={faEye} />;
 
 function Signup() {
   // Registering and Submitting Methods
@@ -19,13 +19,13 @@ function Signup() {
   } = useForm();
 
   const error = useSelector(error => error.registerUsers.error)
-  const [passwordShown, setPasswordShown] = useState(false); // State for password visibility
+  // const [passwordShown, setPasswordShown] = useState(false); // State for password visibility
   const [myError, setmyError] = useState(false);
   const dispatch = useDispatch();
 
-  const togglePasswordVisiblity = () => {
-    setPasswordShown(passwordShown ? false : true);
-  };
+  // const togglePasswordVisiblity = () => {
+  //   setPasswordShown(passwordShown ? false : true);
+  // };
 
   // Submit Function && resetting the input fields
   const onSubmit = (data) => {
@@ -38,11 +38,8 @@ function Signup() {
 
   return (
     <React.Fragment>
-      <h2 className="text-center page-header mt-5">
-        Welcome to My Task Manager App
-      </h2>
       <form
-        className="container mt-5 form-container"
+        className="mt-5 form-container"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className="text-center sign-up">Sign Up</h2>
@@ -96,11 +93,11 @@ function Signup() {
               },
             })}
             style={{ border: errors.password ? "1px solid red" : "" }}
-            type={passwordShown ? "text" : "password"}
+            type="password"
             className="form-control"
             aria-describedby="emailHelp"
           />
-          <i onClick={togglePasswordVisiblity}>{eye}</i>
+          {/* <i onClick={togglePasswordVisiblity}>{eye}</i> */}
           {errors.password && (
             <p className="errorMessage">{errors.password.message}</p>
           )}
@@ -108,17 +105,7 @@ function Signup() {
         <div id="emailHelp" className="form-text">
           We'll never share your password with anyone else.
         </div>
-        <div className="mb-3 form-check mt-4">
-          <div className="flex-1">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Remember me
-            </label>
-          </div>
+        <div className="mb-3 mt-4">
           <div className="flex-2">
             Already have an account <Link to="/login">Sign In</Link>
           </div>

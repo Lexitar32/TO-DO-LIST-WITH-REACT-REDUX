@@ -7,7 +7,7 @@ import "../styles/main.css";
 const MainTasksContent = () => {
   return (
     <div className="main-content container text-center">
-      <h3 className="mt-3">TO-DO-LIST APP</h3>
+      <h3 className="mt-3" style={{ color: "white" }}>User Dashboard</h3>
       <AddTask />
       <TaskList />
     </div>

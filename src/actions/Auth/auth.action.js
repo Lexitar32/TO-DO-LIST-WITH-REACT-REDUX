@@ -19,7 +19,9 @@ export const signupUser = (userData) => (dispatch) => {
           payload: response.data,
         })
 
-        window.location = "/login";
+        setTimeout(() => {
+          window.location = "/login";
+        }, 2000);
       }
     })
     .catch(error => {
@@ -48,22 +50,32 @@ export const signinUser = (userData) => (dispatch) => {
         dispatch({
           type: SIGNIN_USER,
           payload: response.data,
-        });
-      } else {
-        swal({
-          title: "Error!",
-          text: "Users does not exist",
-          icon: "warning",
-          button: "Ok",
-        });
+        })
       }
 
+      setTimeout(() => {
+        window.location = "/mainTasks";
+      }, 2000);
+
       localStorage.setItem("token", response.data);
-    });
+    })
+    .catch(error => {
+      dispatch({
+        type: THROW_ERROR,
+        payload: error.response
+      })
+    })
 };
 
 export const logoutUser = () => (dispatch) => {
   localStorage.removeItem("token");
+
+  swal({
+    title: "Hey!",
+    text: "You are Logged out!",
+    icon: "warning",
+    button: "Proceed",
+  });
 
   dispatch({
     type: LOGOUT_USER,

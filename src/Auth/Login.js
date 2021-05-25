@@ -1,19 +1,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form"; // React Hook Form Hooks
-import { Link, useHistory } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 import "../styles/signup.css";
-import { useDispatch } from "react-redux"; // For Dispatching Actions
+import { useDispatch, useSelector } from "react-redux"; // For Dispatching Actions
 import { signinUser } from "../actions/Auth/auth.action";
 
-// Eye Icon for revealing password
-const eye = <FontAwesomeIcon icon={faEye} />;
-
 function SignIn() {
-  // Redirecting to the Task Dashboard
-  const history = useHistory();
-
   // Registering and Submitting Methods
   const {
     register,
@@ -21,30 +13,32 @@ function SignIn() {
     handleSubmit,
   } = useForm();
 
-  const [passwordShown, setPasswordShown] = useState(false); // State for password visibility
+  const error = useSelector(error => error.registerUsers.error);
+  // const [passwordShown, setPasswordShown] = useState(false); // State for password visibility
+  const [myError, setmyError] = useState(false);
   const dispatch = useDispatch();
 
-  const togglePasswordVisiblity = () => {
-    setPasswordShown(passwordShown ? false : true);
-  };
+  // const togglePasswordVisiblity = () => {
+  //   setPasswordShown(passwordShown ? false : true);
+  // };
 
   // Submit Function && resetting the input fields
   const onSubmit = (data) => {
-    dispatch(signinUser(data)).then(
-      setTimeout(() => {
-        history.push("/mainTasks");
-      }, 3500)
-    );
+    if (error !== null) {
+      setmyError(error.data)
+    } else {
+      dispatch(signinUser(data));
+    }
   };
 
   return (
     <React.Fragment>
-      <h2 className="text-center page-header mt-5">Welcome Back!</h2>
       <form
         className="container mt-5 form-container"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className="text-center sign-up">Sign In</h2>
+        {myError ? <p className="errormessage">{myError}</p> : ""}
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Username
@@ -75,11 +69,11 @@ function SignIn() {
               },
             })}
             style={{ border: errors.password ? "1px solid red" : "" }}
-            type={passwordShown ? "text" : "password"}
+            type="password"
             className="form-control"
             aria-describedby="emailHelp"
           />
-          <i onClick={togglePasswordVisiblity}>{eye}</i>
+          {/* <i onClick={togglePasswordVisiblity}>{eye}</i> */}
           {errors.password && (
             <p className="errorMessage">{errors.password.message}</p>
           )}
@@ -87,8 +81,8 @@ function SignIn() {
         <div id="emailHelp" className="form-text">
           We'll never share your password with anyone else.
         </div>
-        <div className="mb-3 form-check mt-4">
-          <div className="flex-1">
+        <div className="mb-3 mt-4">
+          {/* <div className="flex-1">
             <input
               type="checkbox"
               className="form-check-input"
@@ -97,8 +91,8 @@ function SignIn() {
             <label className="form-check-label" htmlFor="exampleCheck1">
               Remember me
             </label>
-          </div>
-          <div className="flex-2">
+          </div> */}
+          <div>
             Create an Account <Link to="/">Sign Up</Link>
           </div>
         </div>

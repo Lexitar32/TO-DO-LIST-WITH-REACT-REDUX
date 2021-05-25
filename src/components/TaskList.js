@@ -29,6 +29,8 @@ const TaskList = () => {
   const handleClick = () => {
     dispatch(logoutUser());
 
+
+
     history.push("/login");
   };
 
@@ -54,7 +56,7 @@ const TaskList = () => {
             className="filter"
             value={filterTasks}
             onChange={(e) => setfilterTasks(e.target.value)}
-            placeholder="Filter Tasks"
+            placeholder="Search from the list of tasks"
           />
         </span>
         <span className="no">Number of Tasks: {tasks.length} </span>

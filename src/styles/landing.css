@@ -1,0 +1,41 @@
+.landingHeader {
+  margin-top: 220px;
+}
+
+.welcome {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+.landingFlex {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  max-width: 10%;
+  justify-content: center;
+}
+
+.myLink {
+  text-decoration: none;
+  background-color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 15px;
+  color: black;
+}
+
+.myLink:hover {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .landingFlex {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    max-width: 50%;
+    justify-content: center;
+  }
+}
