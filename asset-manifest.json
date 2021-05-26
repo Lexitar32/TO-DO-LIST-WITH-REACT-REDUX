@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/TO-DO-LIST%20React-Redux/static/css/main.65f791e4.chunk.css",
+    "main.js": "/TO-DO-LIST%20React-Redux/static/js/main.e6f96d6f.chunk.js",
+    "main.js.map": "/TO-DO-LIST%20React-Redux/static/js/main.e6f96d6f.chunk.js.map",
+    "runtime-main.js": "/TO-DO-LIST%20React-Redux/static/js/runtime-main.e57f7ac3.js",
+    "runtime-main.js.map": "/TO-DO-LIST%20React-Redux/static/js/runtime-main.e57f7ac3.js.map",
+    "static/css/2.658248ec.chunk.css": "/TO-DO-LIST%20React-Redux/static/css/2.658248ec.chunk.css",
+    "static/js/2.5c6b16e7.chunk.js": "/TO-DO-LIST%20React-Redux/static/js/2.5c6b16e7.chunk.js",
+    "static/js/2.5c6b16e7.chunk.js.map": "/TO-DO-LIST%20React-Redux/static/js/2.5c6b16e7.chunk.js.map",
+    "static/js/3.944bc3d1.chunk.js": "/TO-DO-LIST%20React-Redux/static/js/3.944bc3d1.chunk.js",
+    "static/js/3.944bc3d1.chunk.js.map": "/TO-DO-LIST%20React-Redux/static/js/3.944bc3d1.chunk.js.map",
+    "index.html": "/TO-DO-LIST%20React-Redux/index.html",
+    "static/css/2.658248ec.chunk.css.map": "/TO-DO-LIST%20React-Redux/static/css/2.658248ec.chunk.css.map",
+    "static/css/main.65f791e4.chunk.css.map": "/TO-DO-LIST%20React-Redux/static/css/main.65f791e4.chunk.css.map",
+    "static/js/2.5c6b16e7.chunk.js.LICENSE.txt": "/TO-DO-LIST%20React-Redux/static/js/2.5c6b16e7.chunk.js.LICENSE.txt",
+    "static/media/signup.css": "/TO-DO-LIST%20React-Redux/static/media/mybg.b74f9955.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e57f7ac3.js",
+    "static/css/2.658248ec.chunk.css",
+    "static/js/2.5c6b16e7.chunk.js",
+    "static/css/main.65f791e4.chunk.css",
+    "static/js/main.e6f96d6f.chunk.js"
+  ]
+}
