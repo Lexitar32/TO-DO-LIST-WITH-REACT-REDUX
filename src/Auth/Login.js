@@ -93,7 +93,7 @@ function SignIn() {
             </label>
           </div> */}
           <div>
-            Create an Account <Link to="/">Sign Up</Link>
+            Create an Account <Link to="/signup">Sign Up</Link>
           </div>
         </div>
         <button type="submit" className="btn btn-primary">
