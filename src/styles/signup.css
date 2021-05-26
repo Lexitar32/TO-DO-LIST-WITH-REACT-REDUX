@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
 
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-image: url("../mybg.jpg");
+  background-color: #ffffff;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  overflow-y: hidden;
+}
+
 .page-header {
   font-weight: bold;
 }
